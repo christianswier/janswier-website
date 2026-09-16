@@ -1,0 +1,2 @@
+DirectoryIndex index.html
+RedirectMatch 301 ^/index/?$ /

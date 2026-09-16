@@ -1,0 +1,95 @@
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: markets
+    label: Markten
+    type: collection
+    path: content/markets
+    format: yaml-frontmatter
+    filename:
+      template: "{slug}.md"
+      field: create
+    view:
+      fields: [name, day, opensAt, closesAt, active]
+      primary: name
+      sort: [dayNumber, name]
+      default:
+        sort: dayNumber
+        order: asc
+    fields:
+      - name: name
+        label: Naam
+        type: string
+        required: true
+      - name: slug
+        label: Technische naam
+        type: string
+        required: true
+        pattern:
+          regex: "^[a-z0-9-]+$"
+          message: Gebruik alleen kleine letters, cijfers en streepjes.
+      - name: day
+        label: Dag
+        type: select
+        required: true
+        options:
+          values:
+            - { name: maandag, label: Maandag }
+            - { name: dinsdag, label: Dinsdag }
+            - { name: woensdag, label: Woensdag }
+            - { name: donderdag, label: Donderdag }
+            - { name: vrijdag, label: Vrijdag }
+            - { name: zaterdag, label: Zaterdag }
+            - { name: zondag, label: Zondag }
+      - name: dayNumber
+        label: Dagnummer (zondag = 0)
+        type: number
+        required: true
+        description: Zondag 0, maandag 1, dinsdag 2, enzovoort.
+        options:
+          min: 0
+          max: 6
+      - name: opensAt
+        label: Openingstijd
+        type: string
+        required: true
+        pattern: "^([01]\\d|2[0-3]):[0-5]\\d$"
+      - name: closesAt
+        label: Sluitingstijd
+        type: string
+        required: true
+        pattern: "^([01]\\d|2[0-3]):[0-5]\\d$"
+      - name: address
+        label: Adres
+        type: string
+        required: true
+      - name: city
+        label: Plaats
+        type: string
+        required: true
+      - name: mapsUrl
+        label: Google Maps-link
+        type: string
+        required: true
+      - name: active
+        label: Actief
+        type: boolean
+        default: true
+      - name: featured
+        label: Uitgelicht
+        type: boolean
+        default: false
+      - name: notice
+        label: Tijdelijke mededeling
+        type: text
+        default: ""
+      - name: image
+        label: Marktfoto
+        type: image
+        required: false
+      - name: body
+        label: Korte beschrijving
+        type: text
+        required: true

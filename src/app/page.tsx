@@ -5,6 +5,7 @@ import { FacebookFeed } from "@/components/facebook-feed";
 import { ProduceIllustration } from "@/components/produce-illustration";
 import { TodayMarkets } from "@/components/today-markets";
 import { getMarkets } from "@/lib/markets";
+import { withBasePath } from "@/lib/paths";
 
 export default function HomePage() {
   const markets = getMarkets();
@@ -58,7 +59,7 @@ export default function HomePage() {
 
       <section className="section story-section">
         <div className="story-image">
-          <Image src="/images/pieter-frank-swier.jpg" alt="Pieter en Frank Swier bij de marktkraam" width={625} height={416} />
+          <Image src={withBasePath("/images/pieter-frank-swier.jpg")} alt="Pieter en Frank Swier bij de marktkraam" width={625} height={416} />
         </div>
         <div className="story-copy">
           <p className="eyebrow">Een echt familiebedrijf</p>

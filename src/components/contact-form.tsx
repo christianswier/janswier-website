@@ -1,6 +1,7 @@
 "use client";
 
 import { type FormEvent, useState } from "react";
+import Link from "next/link";
 
 const endpoint = process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT;
 
@@ -36,7 +37,7 @@ export function ContactForm() {
       <div className="field"><label htmlFor="subject">Onderwerp</label><input id="subject" name="subject" required /></div>
       <div className="field"><label htmlFor="message">Bericht</label><textarea id="message" name="message" rows={7} minLength={10} required /></div>
       <div className="honeypot" aria-hidden="true"><label htmlFor="company">Bedrijf</label><input id="company" name="company" tabIndex={-1} autoComplete="off" /></div>
-      <p className="form-privacy">Door dit formulier te versturen gaat u akkoord met de verwerking van uw gegevens zoals beschreven in ons <a href="/privacy/">privacybeleid</a>.</p>
+      <p className="form-privacy">Door dit formulier te versturen gaat u akkoord met de verwerking van uw gegevens zoals beschreven in ons <Link href="/privacy/">privacybeleid</Link>.</p>
       <button className="button" type="submit" disabled={!endpoint || status === "sending"}>
         {status === "sending" ? "Versturen…" : "Bericht versturen"}
       </button>

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/paths";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { site } from "@/lib/site";
@@ -23,7 +24,7 @@ export function Header() {
     <header className="site-header">
       <div className="header-inner">
         <Link href="/" className="brand" aria-label="Jan Swier, naar de homepage">
-          <Image src="/brand/jan-swier.svg" alt="Jan Swier" width={300} height={103} priority />
+          <Image src={withBasePath("/brand/jan-swier.svg")} alt="Jan Swier" width={300} height={103} priority />
         </Link>
 
         <button

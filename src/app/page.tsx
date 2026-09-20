@@ -18,7 +18,7 @@ export default function HomePage() {
             <p className="eyebrow">Al generaties op de markt</p>
             <h1>Het lekkerste fruit, de beste groente.</h1>
             <p className="hero-intro">
-              Verse groente, fruit en aardappelen op negen markten in Noord-Holland. Met veel producten rechtstreeks uit onze eigen regio.
+              Verse groente, fruit en aardappelen op {markets.length} markten in Noord-Holland. Met veel producten rechtstreeks uit onze eigen regio.
             </p>
             <div className="button-row">
               <Link href="/markten" className="button">
@@ -65,7 +65,7 @@ export default function HomePage() {
           <p className="eyebrow">Een echt familiebedrijf</p>
           <h2>Iedere dag met zorg naar de markt</h2>
           <p>
-            Samen met onze medewerkers staan Pieter en Frank Swier iedere week op negen locaties. Vanuit onze thuisbasis in Zwaagdijk-Oost vertrekken de verkoopwagens vroeg in de ochtend met een vers en zorgvuldig samengesteld assortiment.
+            Samen met onze medewerkers staan Pieter en Frank Swier iedere week op {markets.length} locaties. Vanuit onze thuisbasis in Zwaagdijk-Oost vertrekken de verkoopwagens vroeg in de ochtend met een vers en zorgvuldig samengesteld assortiment.
           </p>
           <Link href="/bedrijf" className="text-link">Lees ons verhaal <ArrowRightIcon /></Link>
         </div>

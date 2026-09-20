@@ -18,7 +18,7 @@ export default function MarketsPage() {
       <section className="page-hero compact-hero">
         <GrapeMotif className="page-grape-motif" />
         <div>
-          <p className="eyebrow">Negen locaties in Noord-Holland</p>
+          <p className="eyebrow">{markets.length} locaties in Noord-Holland</p>
           <h1>Onze markten</h1>
           <p>Kom langs voor verse producten, persoonlijk advies en een wekelijks wisselend assortiment.</p>
         </div>

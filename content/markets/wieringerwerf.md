@@ -8,7 +8,7 @@ closesAt: "14:00"
 address: Terpstraat
 city: Wieringerwerf
 mapsUrl: https://www.google.com/maps/search/?api=1&query=Terpstraat%2C%20Wieringerwerf
-active: true
+active: false
 featured: false
 notice: ""
 ---
